@@ -9,10 +9,19 @@ import { PracticalInfo } from './components/PracticalInfo';
 import { AdminModal } from './components/AdminModal';
 import { Footer } from './components/Footer';
 import { BusinessConfig, PublicAvailabilitySlot } from './types';
+import { DEMO_MODE } from './demo/demoMode';
+import {
+  DEMO_BUSINESS_CONFIG,
+  DEMO_AVAILABILITY_SLOTS
+} from './demo/demoBusinessConfig';
 
 export default function App() {
-  const [config, setConfig] = useState<BusinessConfig | null>(null);
-  const [availabilitySlots, setAvailabilitySlots] = useState<PublicAvailabilitySlot[]>([]);
+  // Estado inicial con datos de demostración: la web se renderiza al instante
+  // sin depender de que exista un backend ni de que la API responda.
+  const [config, setConfig] = useState<BusinessConfig | null>(DEMO_BUSINESS_CONFIG);
+  const [availabilitySlots, setAvailabilitySlots] = useState<PublicAvailabilitySlot[]>(
+    DEMO_AVAILABILITY_SLOTS
+  );
   const [selectedDate, setSelectedDate] = useState<string>(() => {
     // Current date formatted YYYY-MM-DD
     const d = new Date();
@@ -26,8 +35,9 @@ export default function App() {
     return sessionStorage.getItem('la_tribu_admin_token') || null;
   });
 
-  // Load business config and availability on mount
+  // Load business config and availability on mount (sólo si hay backend real)
   useEffect(() => {
+    if (DEMO_MODE) return; // GitHub Pages: sin backend, mantenemos los datos demo
     fetchBusinessConfig();
     fetchAvailability();
   }, []);

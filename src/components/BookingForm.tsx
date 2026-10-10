@@ -16,6 +16,7 @@ import {
   Check
 } from 'lucide-react';
 import { PublicAvailabilitySlot, BusinessConfig } from '../types';
+import { DEMO_MODE, DEMO_NOTICE } from '../demo/demoMode';
 
 interface BookingFormProps {
   config: BusinessConfig | null;
@@ -49,6 +50,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   // Submission state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [demoNotice, setDemoNotice] = useState(false);
   const [successResult, setSuccessResult] = useState<{
     trackingCode: string;
     date: string;
@@ -147,6 +149,13 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     }
 
     setIsSubmitting(true);
+
+    // MODO DEMO (GitHub Pages, sin backend): no se envía nada al servidor.
+    if (DEMO_MODE) {
+      setIsSubmitting(false);
+      setDemoNotice(true);
+      return;
+    }
 
     try {
       const res = await fetch('/api/bookings', {
@@ -299,6 +308,28 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 <strong className="text-[#707A63]">“Pendiente de confirmación”</strong>. No se cobra nada online. El propietario verificará la disponibilidad y se pondrá en contacto contigo para confirmar la fecha.
               </div>
             </div>
+
+            {/* Demo mode notice: no real submission without backend */}
+            {DEMO_MODE && (
+              <div className="p-4 rounded-2xl bg-sky-50 border border-sky-300 text-sky-900 text-xs font-semibold flex items-start gap-2.5">
+                <Info className="w-4 h-4 shrink-0 text-sky-600 mt-0.5" />
+                <span>
+                  <strong>{DEMO_NOTICE}</strong> Puedes rellenar y validar el formulario para ver cómo
+                  funciona, pero no se envía ni se guarda ningún dato.
+                </span>
+              </div>
+            )}
+
+            {/* Demo confirmation after clicking submit */}
+            {demoNotice && (
+              <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs font-semibold flex items-start gap-2.5">
+                <AlertTriangle className="w-4 h-4 shrink-0 text-amber-600 mt-0.5" />
+                <span>
+                  <strong>{DEMO_NOTICE}</strong> Esta página es una demostración visual publicada en
+                  GitHub Pages sin servidor; para gestionar reservas reales hace falta el backend.
+                </span>
+              </div>
+            )}
 
             {/* Error banner */}
             {submitError && (
@@ -557,7 +588,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    <span>Enviar Solicitud de Reserva</span>
+                    <span>
+                      {DEMO_MODE ? 'Probar el formulario (demo)' : 'Enviar Solicitud de Reserva'}
+                    </span>
                   </>
                 )}
               </button>

@@ -25,6 +25,7 @@ import {
   Info
 } from 'lucide-react';
 import { Booking, BlockedSlot, BusinessConfig } from '../types';
+import { DEMO_MODE, DEMO_NOTICE } from '../demo/demoMode';
 
 interface AdminModalProps {
   isOpen: boolean;
@@ -406,7 +407,41 @@ export const AdminModal: React.FC<AdminModalProps> = ({
         </div>
 
         {/* Modal Body */}
-        {!adminToken ? (
+        {DEMO_MODE ? (
+          /* MODO DEMO: sin backend no hay login ni datos reales, se explica en
+             lugar de mostrar controles que no harían nada. */
+          <div className="p-8 sm:p-12 max-w-md mx-auto w-full my-auto text-center space-y-6">
+            <div className="w-16 h-16 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center mx-auto">
+              <Database className="w-8 h-8" />
+            </div>
+
+            <div>
+              <h4 className="text-2xl font-extrabold text-[#36402E] font-heading">
+                Panel no disponible en la demo
+              </h4>
+              <p className="text-xs text-[#5B6651] mt-2 leading-relaxed">
+                <strong>{DEMO_NOTICE}</strong> El panel de administración necesita el backend
+                (server.ts + Express) para iniciar sesión, leer y modificar reservas, bloquear fechas
+                o guardar los datos del local. Esta publicación en GitHub Pages es únicamente una
+                demostración visual.
+              </p>
+            </div>
+
+            <div className="p-3 bg-[#F8EFE1] border border-[#C39D70]/30 rounded-xl text-left text-[11px] text-[#707A63] leading-relaxed">
+              💡 <strong>¿Eres el propietario?</strong> Despliega el proyecto con el backend real
+              (por ejemplo en un servidor con Node.js) y desactiva el modo demo para usar el acceso
+              privado con contraseña.
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-full bg-[#707A63] hover:bg-[#5B6651] text-[#FFF9F1] font-bold text-sm py-3 rounded-xl transition shadow-xs flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <X className="w-4 h-4 text-[#F1BF70]" />
+              <span>Cerrar y volver a la web</span>
+            </button>
+          </div>
+        ) : !adminToken ? (
           /* LOGIN SCREEN */
           <div className="p-8 sm:p-12 max-w-md mx-auto w-full my-auto text-center space-y-6">
             <div className="w-16 h-16 rounded-full bg-[#707A63]/15 text-[#707A63] flex items-center justify-center mx-auto">

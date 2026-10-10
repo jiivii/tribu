@@ -11,6 +11,7 @@ import {
   Info
 } from 'lucide-react';
 import { PublicAvailabilitySlot } from '../types';
+import { DEMO_MODE, DEMO_NOTICE } from '../demo/demoMode';
 
 interface AvailabilityCalendarProps {
   slots: PublicAvailabilitySlot[];
@@ -116,6 +117,17 @@ export const AvailabilityCalendar: React.FC<AvailabilityCalendarProps> = ({
           <p className="text-[#5B6651] mt-3 text-base">
             Selecciona un día en el calendario para ver los turnos disponibles. Los días u horarios bloqueados u ocupados se actualizan automáticamente.
           </p>
+
+          {/* Aviso de modo demo: no hay reservas/bloqueos reales */}
+          {DEMO_MODE && (
+            <div className="mt-6 inline-flex items-center gap-2 bg-sky-50 border border-sky-300 text-sky-900 text-xs font-semibold px-4 py-2 rounded-2xl text-left">
+              <Info className="w-4 h-4 shrink-0 text-sky-600" />
+              <span>
+                <strong>{DEMO_NOTICE}</strong> El calendario no muestra reservas reales: todos los
+                días aparecen como libres porque no hay servidor de reservas conectado.
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Calendar Card and Day Detail Layout */}

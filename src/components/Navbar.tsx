@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LaTribuLogo } from './LaTribuLogo';
 import { Calendar, Lock, Menu, X, Phone, MapPin } from 'lucide-react';
 import { BusinessConfig } from '../types';
+import { DEMO_MODE } from '../demo/demoMode';
 
 interface NavbarProps {
   config: BusinessConfig | null;
@@ -37,6 +38,14 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenAdmin, isAdminLogg
           </div>
 
           <div className="flex items-center gap-3">
+            {DEMO_MODE && (
+              <span
+                className="bg-sky-500/80 text-white px-2 py-0.5 rounded-full text-[11px] font-bold"
+                title="Esta web es una demostración visual sin backend: las reservas no se guardan."
+              >
+                Demo visual
+              </span>
+            )}
             <span className="bg-[#9AA08A]/40 text-[#FFF9F1] px-2 py-0.5 rounded-full text-[11px] font-semibold">
               Alquiler 100% privado
             </span>
