@@ -1,0 +1,6 @@
+{
+  "name": "La Tribu - Local para Celebraciones",
+  "description": "Web informativa y sistema de reservas online para el local de alquiler de espacios para celebraciones La Tribu. Calendario de disponibilidad en tiempo real y panel de administración.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

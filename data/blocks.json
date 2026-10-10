@@ -1,0 +1,18 @@
+[
+  {
+    "id": "block-1",
+    "date": "2026-10-18",
+    "isFullDay": true,
+    "reason": "Mantenimiento preventivo del local",
+    "createdAt": "2026-10-01T10:00:00.000Z"
+  },
+  {
+    "id": "block-2",
+    "date": "2026-10-25",
+    "isFullDay": false,
+    "startTime": "10:00",
+    "endTime": "14:30",
+    "reason": "Uso privado de la familia propietaria",
+    "createdAt": "2026-10-02T12:00:00.000Z"
+  }
+]

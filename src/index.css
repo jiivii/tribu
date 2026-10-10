@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    background-color: #F8EFE1;
+    color: #4B5442;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Quicksand', 'Nunito', system-ui, sans-serif;
+  }
+}
+
+/* Custom scrollbar styling in warm earthy colors */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8EFE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C39D70;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #707A63;
+}

@@ -1,0 +1,182 @@
+{
+  "name": "La Tribu",
+  "tagline": "Celebraciones que se quedan en la memoria",
+  "phone": "+34 600 123 456 (Editable)",
+  "whatsapp": "+34 600 123 456",
+  "email": "hola@latribucelebraciones.com (Editable)",
+  "address": "Calle Mayor 45, 28013 Madrid (Texto provisional editable)",
+  "googleMapsUrl": "https://maps.google.com/?q=Calle+Mayor+45+Madrid",
+  "hoursDescription": "Lunes a Domingo de 10:00 a 22:30 h (Turnos flexibles y adaptables)",
+  "howToArrive": "Metro Línea 1 y 2 (Sol / Ópera a 4 min). Autobuses 3, 148 y 50. Parking público 24h a 80m en Plaza Mayor.",
+  "capacityMax": 50,
+  "rates": [
+    {
+      "id": "rate-1",
+      "title": "Turno Mañana",
+      "hours": "10:00 a 14:30 h (4,5h)",
+      "price": "130 €",
+      "description": "Ideal para cumples infantiles matutinos, baby showers o almuerzos familiares.",
+      "isPopular": false
+    },
+    {
+      "id": "rate-2",
+      "title": "Turno Tarde",
+      "hours": "16:30 a 21:30 h (5h)",
+      "price": "160 €",
+      "description": "Nuestro turno estrella para meriendas, cumpleaños, reuniones y celebraciones de tarde.",
+      "isPopular": true
+    },
+    {
+      "id": "rate-3",
+      "title": "Día Completo",
+      "hours": "11:00 a 21:30 h (10,5h)",
+      "price": "260 €",
+      "description": "Disfruta de todo el día sin prisas para eventos familiares grandes y aniversarios.",
+      "isPopular": false
+    },
+    {
+      "id": "rate-4",
+      "title": "Horas Adicionales",
+      "hours": "Por hora extra",
+      "price": "25 €/h",
+      "description": "Sujeto a disponibilidad y previa consulta antes del cierre.",
+      "isPopular": false
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "title": "Espacio Exclusivo y Privado",
+      "description": "El local es 100% privado para tu grupo. Sin compartir zonas con desconocidos.",
+      "icon": "Home",
+      "included": true
+    },
+    {
+      "id": "srv-2",
+      "title": "Cocina & Office Equipado",
+      "description": "Nevera espaciosa, microondas, cafetera de cápsulas, fregadero y zona de preparación de catering.",
+      "icon": "Coffee",
+      "included": true
+    },
+    {
+      "id": "srv-3",
+      "title": "Área Infantil de Juegos",
+      "description": "Parque de bolas acolchado, tobogán suave, pizarra de tizas y juguetes montessori seguros.",
+      "icon": "Sparkles",
+      "included": true
+    },
+    {
+      "id": "srv-4",
+      "title": "Mesas, Sillas y Mobiliario",
+      "description": "Mesas modulables para adultos y niños, tronas infantiles, manteles base y sillas cómodas.",
+      "icon": "Layout",
+      "included": true
+    },
+    {
+      "id": "srv-5",
+      "title": "Sonido Bluetooth y Smart TV",
+      "description": "Altavoces integrados para tu música favorita y Smart TV de 55\" para proyectar recuerdos o vídeos.",
+      "icon": "Music",
+      "included": true
+    },
+    {
+      "id": "srv-6",
+      "title": "Climatización Frío / Calor",
+      "description": "Aire acondicionado y calefacción regulable para una temperatura agradable en cualquier época.",
+      "icon": "Sun",
+      "included": true
+    },
+    {
+      "id": "srv-7",
+      "title": "Servicio de Limpieza Final",
+      "description": "Opción de contratar limpieza profesional fin de fiesta para marcharte sin preocuparte.",
+      "icon": "CheckCircle",
+      "included": false
+    },
+    {
+      "id": "srv-8",
+      "title": "Decoración Personalizada",
+      "description": "Estructuras para globos, candy bar y photocall temático a consultar con el local.",
+      "icon": "Heart",
+      "included": false
+    }
+  ],
+  "celebrationTypes": [
+    {
+      "id": "cel-1",
+      "title": "Cumpleaños Infantiles",
+      "description": "El plan favorito de los peques. Zona de juegos acolchada, espacio para merienda y tarta con total seguridad.",
+      "recommendedHours": "Turno Mañana o Tarde",
+      "badge": "Más solicitado",
+      "icon": "Gift"
+    },
+    {
+      "id": "cel-2",
+      "title": "Fiestas Familiares y Bautizos",
+      "description": "Reuniones de familia en un entorno acogedor, tranquilo y adaptado a todas las edades desde bebés hasta abuelos.",
+      "recommendedHours": "Turno Mañana o Día Completo",
+      "badge": "Familiar",
+      "icon": "Users"
+    },
+    {
+      "id": "cel-3",
+      "title": "Baby Showers y Gender Reveal",
+      "description": "Un rincón lleno de luz natural y colores cálidos para dar la bienvenida al nuevo miembro de la familia.",
+      "recommendedHours": "Turno Mañana o Tarde",
+      "badge": "Emotivo",
+      "icon": "Smile"
+    },
+    {
+      "id": "cel-4",
+      "title": "Talleres y Reuniones Privadas",
+      "description": "Espacio versátil para talleres creativos, showrooms temporales, cursos de cocina o dinámicas de grupo.",
+      "recommendedHours": "Horas flexibles",
+      "badge": "Polivalente",
+      "icon": "Briefcase"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-1",
+      "title": "Zona Principal y Comedor",
+      "category": "Zona Principal",
+      "imageUrl": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+      "description": "Mesas amplias de madera natural y luz cálida para comidas y meriendas."
+    },
+    {
+      "id": "gal-2",
+      "title": "Parque Infantil y Rincón de Juegos",
+      "category": "Zona Infantil",
+      "imageUrl": "https://images.unsplash.com/photo-1596464716127-f2a829822301?auto=format&fit=crop&w=1200&q=80",
+      "description": "Estructura acolchada con suelo blando, casita y elementos pedagógicos."
+    },
+    {
+      "id": "gal-3",
+      "title": "Mesa Dulce y Decoración",
+      "category": "Decoración",
+      "imageUrl": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
+      "description": "Rincón ambientado para tarta, photocall y entrega de regalos."
+    },
+    {
+      "id": "gal-4",
+      "title": "Office y Barra de Preparación",
+      "category": "Office & Cocina",
+      "imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+      "description": "Electrodomésticos, nevera de gran capacidad y espacio para catering."
+    },
+    {
+      "id": "gal-5",
+      "title": "Ambiente Acogedor La Tribu",
+      "category": "Zona Principal",
+      "imageUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80",
+      "description": "Decoración con tonos tierra, plantas y toques en madera natural."
+    },
+    {
+      "id": "gal-6",
+      "title": "Montaje para Bautizo y Baby Shower",
+      "category": "Decoración",
+      "imageUrl": "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80",
+      "description": "Detalles cuidados y mesas preparadas para celebraciones inolvidables."
+    }
+  ]
+}
